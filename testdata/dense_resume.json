@@ -1,0 +1,84 @@
+{
+  "name": "示例用户",
+  "role": "AI 应用开发工程师",
+  "contacts": ["示例城市", "10000000000", "sample@example.com"],
+  "main": [
+    {"title": "实习经历", "items": [
+      ["title", "~10~"], ["meta", "0000.00 — 0000.00"], ["meta", "~4~"],
+      ["label", "~4~"],
+      ["paragraph", "~8~ Gf ~6~ YeeY ~6~，~23~。~12~，~11~，~9~ vvW ~4~。"],
+      ["label", "~4~"],
+      ["bullet", "~2~ YeeY ~8~，~8~、~15~；"],
+      ["bullet", "~10~，~6~、~5~ CTglz ~4~，~9~；"],
+      ["bullet", "~11~，~8~、~11~，~9~；"],
+      ["bullet", "~10~，~8~，~11~，~2~ 0000 + ~6~；"],
+      ["bullet", "~10~，~12~；"],
+      ["label", "~4~"],
+      ["paragraph", "~10~，~15~，~10~；~9~、~10~、~6~，~2~ Gf ~8~。~18~， ~4~ YeeY ~4~、~6~、~14~。"],
+      ["title", "~12~"], ["meta", "0000.00 — ~2~"], ["meta", "vluETJ · ~3~ · ~2~"],
+      ["label", "~10~ 0000.00 ~2~"],
+      ["bullet", "~2~ R ~5~ VWY ~2~：~2~ R hJbtliT frTM Ybinrlbuz（@lrTM_zbinrlbuz）~3~、knii hnpilznlud ~3~ VWY ~2~"],
+      ["bullet", "~2~ YbJbnr Ghf ~5~：~12~，~2~ vluETgfu ~6~ QGnrn VilTur ~1~ VilTur fH ~1~ VilTur YTxJTr"],
+      ["bullet", "~13~：~12~，~6~ 00 ~5~，~2~ 000–000 ~4~"],
+      ["bullet", "~2~ vluETgfu ~6~：~11~、hJbtliT、VWY ~7~"],
+      ["label", "~4~ 0000.00 ~2~"],
+      ["bullet", "~8~：~3~ ilzrMbuE ~1~ VbMbbzT ~2~"],
+      ["label", "~7~ 0000.00 — 0000.00 ~2~"],
+      ["bullet", "~9~：~2~ VYA ~3~、~1~ YoD ~2~、~4~、~6~，~2~ HTTbYTTE / QbTuGf ~6~"],
+      ["bullet", "~2~ GdTur ~2~：Nnd eduur ~6~ luyTurbJF-JlzE-edTur"]
+    ]},
+    {"title": "项目经历", "items": [
+      ["title", "CfQS ViengT"], ["meta", "0000.00-~2~"], ["meta", "~2~ Gf GdTur ~2~ Gf ~4~"],
+      ["label", "~4~"],
+      ["paragraph", "CfQS ViengT ~9~ Gf GdTur ~2~，~6~ + ~2~ SDf ~5~，~3~ GdTur ~2~、~5~ vvW ~4~。~13~，GdTur ~5~ ViengT Ghf、 HTTbYTTE Ghf ~4~，~13~。~9~ YEliiz、WVh ~13~ zTzzlbu。 Ulrwnp：nrrbz://dlrnnp.xbM/0000000000-nnp/CfQS-ViengT.dlr"],
+      ["label", "~4~"],
+      ["bullet", "~11~：CQfS-xbJT ~8~，CQfS-Snl ~5~；~2~ SVh YbxETr+ sYQO-ChV 0.0 + OHsYQO ~2~，~11~，GdTur ~12~。"],
+      ["bullet", "GdTur ~4~：~2~「~2~ → ~4~ → ~2~ → ~4~」~2~，~12~，~6~、~9~，~9~。"],
+      ["bullet", "~9~：~2~ hFgeurlx y0 ~6~ 00+ ~6~，~12~，~8~、~8~，GdTur ~8~。"],
+      ["bullet", "~1~ GdTur ~2~：~3~ GdTur ~3~ GdTur ~4~，~12~，~3~/~3~/~8~，~12~。"],
+      ["bullet", "~8~：~6~、~2~ YxnTMe ~2~、~12~；~5~ 0 ~12~，~16~；~7~ 0 ~11~，~8~ 0 ~5~，~8~。"],
+      ["bullet", "~8~：~9~，~5~ /xbMbexr ~4~ vvW ~6~，~12~ ；~14~；~4~/~2~/~8~，GdTur ~16~。"],
+      ["bullet", "~5~：~3~ hJbylgTJ，~1~ rbETu ~4~，~10~，~11~。"],
+      ["title", "~4~ CGU ~6~"], ["meta", "0000.00 - 0000.00"], ["meta", "Gf ~4~"],
+      ["label", "~4~"],
+      ["paragraph", "~13~ CGU ~4~，~8~、~5~、~4~、~2~、~3~ WTp ~5~，~2~ hHk/hhSR/SRS/WH/HQVR/ RvYR ~18~，~2~ WTp ~5~ CaYS Ghf ~6~，~6~、~14~，~12~。Ulrwnp：nrrbz://dlrnnp.xbM/0000000000-nnp/CGU-zMeJr-tlueuxT.dlr"],
+      ["label", "~4~"],
+      ["bullet", "~4~：~11~（hHk/hhSR/SRS/WH），~11~ QVC ~3~；~6~+~6~，~4~ KW00 ~5~ pdT-zMeii-cn-y0.0 ~6~。"],
+      ["bullet", "~4~：KW00+~10~，~10~，pdT-JTJeuETJ VJbzzauxbgTJ ~2~ Sbb-0； ~2~ OnTJF ~3~，~11~ 0 ~6~。"],
+      ["bullet", "~5~：HTTbYTTE vvW ~7~，bJbMbr ~10~，vvW ~12~。"],
+      ["bullet", "~4~：~2~ CGUGY ~3~ WCC、wlr@o、CTxeii@o ~5~，~4~+~4~ WCC 0.00、wlr@0 00%、wlr@0 00%、telrntniuTzz 0.00。"],
+      ["bullet", "~3~：~3~/~2~/~2~/~2~/~8~；~2~ AnT0+aiTMTur hinz ~6~、~7~"]
+    ]}
+  ],
+  "aside": [
+    {"title": "教育背景", "items": [["paragraph", "0000.00~0000.00 ~6~ ~7~ ~2~"]]},
+    {"title": "技术与方法", "items": [
+      ["label", "GdTur ~3~"],
+      ["bullet", "~2~ GdTur ~9~，~4~、~2~、~4~、~4~、~4~、~9~。"],
+      ["bullet", "~2~ CTGxr、CTtiTxrlbu、Sbbi DzT、knuxrlbu Veii、WVh、~1~ GdTur ~7~，~2~ knuxrlbu Veiilud/WVh ~6~。"],
+      ["label", "CGU ~3~"],
+      ["bullet", "~2~ CGU ~8~，~7~（~2~+KW00）~4~、hCk ~4~ CTJeuE ~3~。"],
+      ["label", "Gf ~4~"],
+      ["bullet", "~4~ VbgTL、ViengT VbgT、SJeT、VnJzbJ ~1~ Gf ~10~。"],
+      ["label", "~5~"],
+      ["bullet", "~6~、~4~、veudVnelu、veudUJebn。~10~。"],
+      ["bullet", "~2~ SJeuztJbMTJ ~14~。"],
+      ["label", "~3~"],
+      ["bullet", "~8~ WFYOv、~7~ CTglz，WbudbHK、~7~ Wliynz，VnJbMe。"],
+      ["label", "~4~"],
+      ["bullet", "~2~ hFrnbu ~7~，~2~ kezrGhf、kiezE、HIeudb ~4~。"],
+      ["label", "~4~"],
+      ["bullet", "~4~ hFrnbu ~9~，~13~。"]
+    ]},
+    {"title": "资格证书", "items": [["bullet", "~8~"], ["bullet", "~7~"], ["bullet", "~9~"]]},
+    {"title": "荣誉奖项", "items": [
+      ["bullet", "~7~"], ["bullet", "~7~"], ["bullet", "~7~"],
+      ["bullet", "~9~“~2~、~5~”~9~"], ["bullet", "~17~"], ["bullet", "~20~"], ["bullet", "~18~"]
+    ]}
+  ],
+  "footer": [{"title": "个人优势", "items": [
+    ["bullet", "~3~：~2~ Gf ~4~ GdTur ~2~，~8~；~4~、~4~，~8~。"],
+    ["bullet", "~3~：~7~，~5~，~14~。"],
+    ["bullet", "~3~：~4~，~4~，~6~，~6~。"]
+  ]}]
+}

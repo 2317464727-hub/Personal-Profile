@@ -1,0 +1,469 @@
+/* Screen-only page polish. Resume document and print geometry stay in index.html. */
+@media screen {
+  :is(#home, #intern, #tasks, #spaces) {
+    --page-card-shadow: 0 3px 16px rgba(40, 57, 101, .035);
+    --page-card-radius: 18px;
+  }
+
+  #home .narrow,
+  #intern .narrow,
+  #tasks .task-workspace,
+  #spaces .space-board {
+    width: 100%;
+    max-width: 1120px;
+    margin: 8px auto 40px;
+    min-width: 0;
+  }
+
+  #home .narrow { max-width: 960px; }
+
+  :is(#home, #intern, #tasks, #spaces) .btn,
+  #resume .resume-toolbar .btn {
+    min-height: 38px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+
+  :is(#home, #intern, #tasks, #spaces) .btn.ghost,
+  #resume .resume-toolbar .btn.ghost {
+    background: var(--surface);
+    color: var(--text);
+    border-color: var(--line);
+    box-shadow: none;
+  }
+
+  :is(#home, #intern, #tasks, #spaces) .btn.ghost:hover:not(:disabled),
+  #resume .resume-toolbar .btn.ghost:hover:not(:disabled) {
+    color: var(--accent);
+    border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
+    background: var(--accent-soft);
+  }
+
+  :is(#home, #intern, #tasks, #spaces) :is(button, summary):focus-visible,
+  #resume .resume-toolbar button:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--accent) 24%, transparent);
+    outline-offset: 3px;
+  }
+
+  :is(#home, #intern, #tasks, #spaces) button:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  #intern .page-intro,
+  #spaces .space-overview-head,
+  #tasks .task-page-head {
+    margin: 0 0 22px;
+    min-height: 58px;
+  }
+
+  #intern .page-intro h2,
+  #spaces .space-overview-head h2,
+  #tasks .task-page-head h2 {
+    color: var(--ink);
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: -.04em;
+    line-height: 1.3;
+  }
+
+  #intern .page-intro .lede,
+  #spaces .space-overview-head p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  /* Personal overview */
+  #home .home-page {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 20px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  #home .home-page > section {
+    min-width: 0;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: var(--page-card-radius);
+    background: var(--surface);
+    box-shadow: var(--page-card-shadow);
+  }
+
+  #home .home-hero,
+  #home .home-insights { grid-column: 1 / -1; }
+  #home .home-focus-section,
+  #home .home-recent-section { grid-column: span 7; }
+  #home .home-strengths-section,
+  #home .home-profile-summary { grid-column: span 5; }
+
+  #home .home-page > .home-hero {
+    padding: 30px;
+    background: linear-gradient(115deg, var(--surface) 45%, color-mix(in srgb, var(--accent) 6%, var(--surface)));
+  }
+
+  #home .home-identity-row { align-items: center; gap: 20px; }
+  #home .home-identity .kicker { letter-spacing: .08em; font-size: 11px; }
+  #home .home-identity h1 { margin: 9px 0 8px; font-size: 36px; font-weight: 720; }
+  #home .home-role { font-size: 13px; line-height: 1.7; }
+  #home .home-hero h2 { max-width: 32ch; margin: 24px 0 10px; font-size: 23px; }
+  #home .home-intro { margin-top: 15px; color: var(--text); font-size: 13px; line-height: 1.85; }
+  #home .home-actions { margin-top: 22px; gap: 10px; }
+  #home .home-section-head { align-items: center; gap: 12px; flex-wrap: wrap; }
+  #home .home-section-head h2 { font-size: 17px; font-weight: 700; letter-spacing: -.02em; }
+  #home .home-section-head .text-btn { padding: 5px 0; font-size: 12px; }
+
+  #home .home-range {
+    padding: 4px;
+    gap: 3px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--surface-2);
+  }
+  #home .home-range button { min-height: 29px; padding: 5px 11px; border-radius: 7px; font-size: 11px; }
+  #home .home-range button[aria-pressed="true"] {
+    color: var(--accent);
+    background: var(--surface);
+    box-shadow: 0 2px 5px rgba(40, 57, 101, .08);
+  }
+  #home .home-insight-grid { gap: 28px; margin-top: 24px; }
+  #home .home-insight-grid > div + div { padding-left: 28px; border-left: 1px solid var(--line); }
+  #home .home-insight-head { margin-bottom: 16px; }
+  #home .home-insight-head h3 { font-size: 13px; color: var(--text); }
+  #home .home-outcome-bar { height: 12px; border-radius: 8px; gap: 2px; }
+  #home .home-outcome-list { gap: 8px; margin-top: 18px; }
+  #home .home-outcome-row { min-height: 43px; padding: 8px 10px; border-radius: 9px; background: var(--surface-2); }
+  #home .home-outcome-row i { width: 7px; height: 7px; border-radius: 50%; }
+  #home .home-outcome-row strong { color: var(--ink); font-size: 18px; font-weight: 650; }
+  #home .home-insight-note { line-height: 1.7; }
+  #home .home-ai-summary { align-items: baseline; flex-wrap: wrap; gap: 7px; }
+  #home .home-ai-summary strong { color: var(--accent); font-size: 32px; font-weight: 700; }
+  #home .home-ai-days { gap: 12px; }
+  #home .home-ai-track { height: 76px; border: 0; border-radius: 5px; background: var(--surface-2); }
+  #home .home-ai-track span { border-radius: 5px; background: var(--accent); }
+  #home .home-ai-day time { margin-top: 3px; }
+  #home .home-ai-open { margin-top: 13px; }
+
+  #home .home-focus-grid { grid-template-columns: 1fr; gap: 14px; margin-top: 20px; }
+  #home .home-focus-item { padding: 14px 16px; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 10px; background: var(--surface-2); }
+  #home .home-focus-item:nth-child(2) { border-left-color: var(--teal); }
+  #home .home-focus-item h3 { margin: 8px 0; font-size: 15px; }
+  #home .home-focus-item p { font-size: 12px; line-height: 1.8; }
+  #home .home-other { margin-top: 18px; padding-top: 14px; line-height: 1.75; }
+  #home .home-strength-list { gap: 0; margin-top: 16px; }
+  #home .home-strength-item { grid-template-columns: 1fr; gap: 6px; padding: 14px 0; }
+  #home .home-strength-item strong { color: var(--accent); font-size: 12px; }
+  #home .home-strength-item p { line-height: 1.85; }
+  #home .home-recent-list { border-top: 0; margin-top: 16px; }
+  #home .home-recent-item { padding: 3px 0; }
+  #home .home-recent-row { grid-template-columns: 48px minmax(0, 1fr) 78px; min-height: 62px; gap: 10px; padding: 10px 0; border-radius: 8px; }
+  #home .home-recent-row time { color: var(--muted); font-size: 11px; }
+  #home .home-recent-row strong { font-size: 12px; }
+  #home .home-recent-row em { font-size: 10px; }
+  #home .home-recent-hide { min-width: 30px; min-height: 34px; padding: 6px; }
+  #home .home-record-manage summary { max-width: 100%; line-height: 1.7; }
+  #home .home-contact-list { grid-template-columns: 1fr; gap: 0; margin-top: 14px; }
+  #home .home-contact-list > div { padding: 12px 0; border-bottom: 1px solid var(--line); }
+  #home .home-contact-list > div:last-child { border-bottom: 0; }
+  #home .home-contact-list dt { font-size: 11px; }
+  #home .home-contact-list dd { margin-top: 6px; font-size: 13px; line-height: 1.65; }
+
+  /* Scheduled tasks and reviewable results */
+  #tasks .task-workspace {
+    max-width: 1180px;
+    display: grid;
+    grid-template-columns: minmax(350px, .88fr) minmax(0, 1.12fr);
+    grid-template-areas: "head head" "attention attention" "create queue" "data data";
+    gap: 24px 28px;
+    align-items: start;
+  }
+  #tasks .task-page-head { grid-area: head; min-height: 0; margin: 0; padding: 4px 0 17px; border-bottom: 1px solid var(--line); }
+  #tasks .task-page-head h2 { font-size: 25px; }
+  #tasks .task-page-tools { gap: 8px; }
+  #tasks #task-refresh { width: 38px; min-width: 38px; height: 38px; padding: 0; font-size: 18px; }
+  #tasks .task-attention { grid-area: attention; }
+  #tasks .task-create { grid-area: create; }
+  #tasks .task-queue { grid-area: queue; display: grid; gap: 24px; align-content: start; min-width: 0; }
+  #tasks .task-create {
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+    box-shadow: none;
+  }
+  #tasks .task-create > h3 { margin-bottom: 18px; font-size: 16px; font-weight: 700; }
+  #tasks .task-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  #tasks .task-fields > label:last-child { grid-column: 1 / -1; }
+  #tasks .task-fields label { gap: 7px; color: var(--text); font-size: 12px; font-weight: 500; }
+  #tasks .task-fields :is(input, textarea, select),
+  #tasks .task-source-files textarea,
+  #intern .intern-summary-form input {
+    min-height: 40px;
+    padding: 9px 11px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  #tasks .task-fields textarea { min-height: 88px; line-height: 1.65; }
+  #tasks .task-fields :is(input, textarea)::placeholder,
+  #tasks .task-source-files textarea::placeholder { color: var(--muted); opacity: .85; }
+  #tasks .task-fields :is(input, textarea, select):focus,
+  #tasks .task-source-files textarea:focus,
+  #intern .intern-summary-form input:focus {
+    outline: 3px solid color-mix(in srgb, var(--accent) 13%, transparent);
+    border-color: var(--accent);
+    background: var(--surface);
+  }
+  #tasks .task-create-foot { gap: 12px; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+  #tasks .task-create-foot > small { flex: 1 1 240px; font-size: 11px; line-height: 1.6; }
+  #tasks .task-create-foot > .task-actions { margin-left: auto; }
+  #tasks .task-status { margin-top: 12px; font-size: 12px; line-height: 1.7; }
+  #tasks .task-source-settings { margin-top: 18px; padding: 14px 0 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: transparent; }
+  #tasks .task-source-settings legend { padding: 0 8px; color: var(--accent); font-size: 12px; font-weight: 650; }
+  #tasks .task-source-checks { gap: 10px 20px; }
+  #tasks .task-source-checks label { align-items: center; }
+  #tasks .task-source-checks input { margin-top: 0; }
+  #tasks .task-source-files { gap: 8px; margin: 16px 0; }
+  #tasks .task-source-files textarea { background: var(--surface); min-height: 72px; font-size: 12px; }
+  #tasks .task-source-consent { padding-top: 13px; border-top: 1px solid color-mix(in srgb, var(--accent) 15%, var(--line)); line-height: 1.8; }
+  #tasks .task-source-settings small { margin-top: 10px; font-size: 11px; line-height: 1.8; }
+  #tasks .task-section { min-width: 0; margin: 0; padding: 0; }
+  #tasks .task-section > h3 { display:flex; align-items:center; gap: 9px; min-height: 26px; margin: 0 0 10px; font-size: 15px; font-weight: 700; }
+  #tasks .task-count { display: inline-flex; align-items: center; justify-content: center; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 4px; background: var(--surface-3); color: var(--text); font-size: 11px; font-weight: 700; }
+  #tasks .task-count:empty { display: none; }
+  #tasks .task-attention .task-count { background: color-mix(in srgb, var(--danger) 10%, var(--surface)); color: var(--danger); }
+  #tasks .task-list { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  #tasks .task-row { padding: 16px 0; gap: 12px; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; box-shadow: none; }
+  #tasks .task-attention .task-list { border-top: 0; }
+  #tasks .task-attention .task-row { grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 18px; padding: 15px 18px; border: 1px solid color-mix(in srgb, var(--amber) 24%, var(--line)); border-left: 3px solid var(--amber); border-radius: 7px; background: color-mix(in srgb, var(--amber) 4%, var(--surface)); }
+  #tasks .task-attention .task-row + .task-row { margin-top: 8px; }
+  #tasks .task-row > div { min-width: 0; }
+  #tasks .task-row h4 { gap: 8px; margin-bottom: 5px; font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
+  #tasks .task-row p { font-size: 12px; line-height: 1.6; }
+  #tasks .task-row .task-meta { margin-top: 7px; font-size: 11px; color: var(--muted); }
+  #tasks .task-badge { padding: 3px 7px; border-radius: 4px; background: var(--surface-2); font-size: 10px; line-height: 1.4; }
+  #tasks .task-badge.need { border-color: color-mix(in srgb, var(--danger) 20%, var(--line)); background: color-mix(in srgb, var(--danger) 7%, var(--surface)); color: var(--danger); }
+  #tasks .task-badge.done { border-color: var(--ok-line); background: var(--ok-bg); color: var(--ok); }
+  #tasks .task-actions { gap: 7px; }
+  #tasks .task-actions .btn { min-height: 32px; padding: 5px 10px; border-radius: 6px; font-size: 11px; }
+  #tasks .task-create-foot .btn[type="submit"] { min-height: 40px; padding: 8px 20px; font-size: 12px; }
+  #tasks .task-output { margin-top: 10px; max-height: 320px; padding: 9px 0 9px 12px; border: 0; border-left: 2px solid var(--accent-line); border-radius: 0; background: transparent; font-size: 12px; line-height: 1.65; }
+  #tasks .task-empty { min-height: 52px; display:flex; align-items:center; margin:0; padding: 12px 0; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; font-size: 12px; line-height: 1.6; }
+  #tasks .task-sources { margin-top: 14px; font-size: 11px; line-height: 1.8; }
+  #tasks .task-sources summary { width: fit-content; max-width: 100%; color: var(--accent); padding: 4px 0; }
+  #tasks .task-sources ul { padding-left: 20px; margin-top: 7px; }
+  #tasks .task-drafts { gap: 8px; margin-top: 13px; }
+  #tasks .task-draft-item { padding: 11px; border-color: color-mix(in srgb, var(--accent) 18%, var(--line)); border-radius: 6px; background: var(--accent-soft); line-height: 1.7; }
+  #tasks .task-draft-item .btn { min-height: 32px; padding: 5px 10px; border-radius: 7px; }
+  #tasks #personal-data-panel { grid-area: data; margin: 4px 0 0; padding: 18px 0 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: transparent; box-shadow: none; }
+  #tasks #personal-data-panel > h3 { margin: 0 0 6px; font-size: 14px; }
+  #tasks [data-sync-status] { margin: 0 0 4px; color: var(--text); font-size: 12px; line-height: 1.6; }
+  #tasks .personal-data-scope { margin: 0 0 12px; color: var(--muted); font-size: 11px; line-height: 1.6; }
+  #tasks .personal-data-actions { display: flex; flex-wrap: wrap; gap: 7px; }
+  #tasks .personal-data-actions .btn { min-height: 32px; padding: 5px 10px; border-radius: 6px; font-size: 11px; }
+  #tasks [data-sync-conflict] { padding: 14px; border: 1px solid var(--accent-line); border-radius: 10px; background: var(--accent-soft); font-size: 12px; line-height: 1.8; }
+
+  /* Internship records */
+  #intern .page-stack { gap: 0; }
+  #intern .intern-summary-settings { margin: 0 0 24px; padding: 24px; border: 1px solid var(--line); border-radius: var(--page-card-radius); background: var(--surface); box-shadow: var(--page-card-shadow); }
+  #intern .intern-summary-head { gap: 20px; }
+  #intern .intern-summary-head h3 { margin-bottom: 7px; font-weight: 700; }
+  #intern .intern-summary-head p { line-height: 1.8; }
+  #intern .intern-switch { gap: 8px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 9px; background: var(--surface-2); font-size: 12px; }
+  #intern .intern-summary-form { margin-top: 22px; gap: 14px; grid-template-columns: minmax(0, 1fr) minmax(140px, .7fr) auto; }
+  #intern .intern-summary-form .field { gap: 7px; color: var(--text); }
+  #intern .intern-summary-form .btn { height: 42px; }
+  #intern .intern-summary-meta { gap: 10px 24px; padding: 16px; margin-top: 20px; border-radius: 10px; background: var(--surface-2); font-size: 11px; line-height: 1.7; }
+  #intern .intern-summary-meta strong { color: var(--ink); font-size: 12px; }
+  #intern .intern-summary-note { margin-top: 14px; line-height: 1.8; }
+  #intern .intern-summary-import { margin-top: 16px; gap: 10px; }
+  #intern .intern-summary-import span { line-height: 1.7; }
+  #intern .company { margin: 0 0 20px; padding: 24px 24px 10px; border-color: var(--line); border-radius: var(--page-card-radius); box-shadow: var(--page-card-shadow); }
+  #intern .company-head { gap: 18px; padding-bottom: 12px; }
+  #intern .company-id { gap: 14px; }
+  #intern .co-mark { width: 46px; height: 46px; border: 1px solid color-mix(in srgb, var(--accent) 16%, var(--line)); border-radius: 13px; background: var(--accent-soft); color: var(--accent); font-size: 17px; }
+  #intern .company-id h3 { font-size: 17px; line-height: 1.55; }
+  #intern .company-id p { margin: 4px 0 0; font-size: 12px; line-height: 1.6; }
+  #intern .company-head .when { padding: 6px 9px; border-radius: 7px; background: var(--surface-2); font-size: 11px; }
+  #intern .company-note { margin: 8px 0 18px; color: var(--text); font-size: 13px; line-height: 1.8; }
+  #intern .intern-resume-content { padding: 18px 0 10px; border-top: 1px solid var(--line); color: var(--text); font-size: 13px; line-height: 1.85; overflow-wrap: anywhere; }
+  #intern .intern-resume-content h4 { margin: 16px 0 8px; color: var(--ink); font-size: 14px; font-weight: 650; }
+  #intern .intern-resume-content .resume-detail-row:first-child h4 { margin-top: 0; }
+  #intern .intern-resume-content p { margin: 0 0 14px; }
+  #intern .intern-resume-content ul { margin: 8px 0 18px; padding-left: 20px; }
+  #intern .intern-resume-content li { margin: 6px 0; }
+  #intern .intern-resume-content li::marker { color: var(--accent); }
+  #intern .intern-resume-content time { color: var(--muted); font-size: 11px; font-weight: 400; }
+  #intern .intern-resume-content .resume-company-project { margin: 16px 0; padding-left: 16px; border-left: 2px solid var(--accent-line); }
+  #intern .intern-arranged-content > .company-note { padding: 14px 16px; border-radius: 10px; background: var(--surface-2); }
+  #intern .intern-arranged-content .intern-review-content p { margin: 0; color: var(--text); font-size: 13px; line-height: 1.85; }
+  #intern .co-work li { padding: 19px 0; grid-template-columns: 135px minmax(0, 1fr); gap: 20px; border-color: var(--line); }
+  #intern .co-work h4 { margin-bottom: 8px; font-size: 14px; font-weight: 650; }
+  #intern .co-work p { font-size: 13px; line-height: 1.85; }
+  #intern .co-when { color: var(--muted); font-size: 11px; font-weight: 500; line-height: 1.7; }
+  #intern .intern-reviews { margin-top: 6px; padding-top: 22px; }
+  #intern .intern-review { grid-template-columns: 135px minmax(0, 1fr); gap: 20px; }
+  #intern .intern-review-period { font-size: 11px; line-height: 1.8; }
+  #intern .intern-review-content ul { font-size: 12px; line-height: 1.85; }
+
+  /* Workspace cards */
+  #spaces .ws { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; border: 0; }
+  #spaces .space-entry {
+    grid-template-columns: minmax(0, 1fr) 32px;
+    align-items: start;
+    gap: 18px 12px;
+    min-height: 218px;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--c, var(--accent));
+    border-radius: 16px;
+    background: var(--surface);
+    box-shadow: var(--page-card-shadow);
+  }
+  #spaces .space-entry:hover,
+  #spaces .space-entry.on { border-color: color-mix(in srgb, var(--c, var(--accent)) 40%, var(--line)); border-top-color: var(--c, var(--accent)); background: var(--surface); box-shadow: 0 5px 20px rgba(40, 57, 101, .07); }
+  #spaces .space-entry:focus-visible { outline-offset: 4px; }
+  #spaces .space-entry-main { grid-column: 1; grid-row: 1; gap: 10px; }
+  #spaces .space-entry-name { gap: 8px; font-size: 16px; line-height: 1.5; overflow-wrap: anywhere; }
+  #spaces .space-entry-name i { width: 8px; height: 8px; }
+  #spaces .space-entry-line { color: var(--text); font-size: 12px; line-height: 1.75; }
+  #spaces .space-entry-path { font-size: 10px; line-height: 1.7; }
+  #spaces .space-entry-meta { grid-column: 1 / -1; grid-row: 2; display: grid; grid-template-columns: 1fr auto; gap: 7px 12px; align-self: end; padding-top: 14px; border-top: 1px solid var(--line); }
+  #spaces .space-entry-meta b { font-size: 12px; }
+  #spaces .space-entry-meta small { font-size: 11px; }
+  #spaces .space-entry-meta > span { grid-column: 1 / -1; font-size: 11px; line-height: 1.6; }
+  #spaces .space-entry-arrow { display: grid; place-items: center; grid-column: 2; grid-row: 1; width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 9px; background: var(--surface-2); font-size: 17px; }
+
+  /* Resume controls only: no selectors inside the approved document. */
+  #resume .resume-toolbar { max-width: 1080px; justify-content: flex-start; gap: 8px; margin: 8px auto 18px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); box-shadow: 0 3px 16px rgba(40, 57, 101, .035); }
+
+  /* Editors and confirmation dialogs retain their native modal behavior. */
+  #home-editor,
+  #resume-import-dialog,
+  #task-draft-dialog,
+  #task-reminder-dialog { border-color: var(--line); border-radius: 18px; box-shadow: 0 24px 80px rgba(22, 37, 73, .2); }
+  :is(#home-editor, #resume-import-dialog, #task-draft-dialog, #task-reminder-dialog)::backdrop { background: rgba(20, 32, 58, .36); backdrop-filter: blur(3px); }
+  #home-editor .home-editor-head,
+  #resume-import-dialog .resume-dialog-head { padding: 20px 24px; background: var(--surface-2); }
+  #home-editor .home-editor-head h2,
+  #resume-import-dialog .resume-dialog-head h2 { font-size: 18px; }
+  #home-editor .home-editor-head button,
+  #resume-import-dialog .resume-dialog-close { border-radius: 8px; background: var(--surface); }
+  #home-editor .home-edit-section { padding-top: 22px; padding-bottom: 22px; }
+  #home-editor :is(input, textarea),
+  #resume-import-dialog :is(input, textarea) { padding: 10px 12px; border-color: var(--line); border-radius: 9px; background: var(--surface-2); font-size: 13px; line-height: 1.65; }
+  #home-editor :is(input, textarea):focus,
+  #resume-import-dialog :is(input, textarea):focus { outline: 3px solid color-mix(in srgb, var(--accent) 14%, transparent); border-color: var(--accent); }
+  #home-editor .home-focus-edit { padding: 16px; border-radius: 12px; background: var(--surface-2); }
+  #home-editor .home-editor-actions,
+  #resume-import-dialog .resume-dialog-actions { padding-top: 14px; padding-bottom: 14px; }
+  :is(#home-editor, #resume-import-dialog, #task-draft-dialog, #task-reminder-dialog) .btn { min-height: 38px; padding: 8px 13px; border-radius: 9px; font-size: 12px; }
+  #task-draft-dialog { padding: 26px; }
+  #task-draft-dialog > h3 { font-size: 20px; margin-bottom: 12px; }
+  #task-draft-dialog > p { line-height: 1.8; }
+  #task-draft-dialog .task-draft-compare { gap: 16px; margin: 22px 0; }
+  #task-draft-dialog .task-draft-compare h4 { margin-bottom: 10px; color: var(--muted); font-size: 12px; }
+  #task-draft-dialog .task-draft-compare pre { padding: 16px; border-radius: 10px; font-size: 12px; line-height: 1.9; }
+  #task-draft-dialog #task-draft-after { border-color: var(--ok-line); background: color-mix(in srgb, var(--ok) 4%, var(--surface)); }
+  #task-draft-dialog > .task-actions { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
+  #task-reminder-dialog form { gap: 16px; padding: 26px; }
+  #task-reminder-dialog h3 { font-size: 20px; }
+  #task-reminder-dialog p { font-size: 14px; line-height: 1.8; }
+  #task-reminder-dialog .task-reminder-actions { margin-top: 8px; gap: 8px; }
+}
+
+@media screen and (max-width: 960px) {
+  #home .home-page { gap: 16px; }
+  #home .home-page > section { grid-column: 1 / -1; }
+  #home .home-focus-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #home .home-contact-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; }
+  #tasks .task-workspace { grid-template-columns: minmax(0, 1fr); grid-template-areas: "head" "attention" "create" "queue" "data"; gap: 22px; }
+  #tasks .task-row { grid-template-columns: 1fr; }
+  #tasks .task-attention .task-row { grid-template-columns: minmax(0, 1fr); }
+  #tasks .task-row > .task-actions { justify-content: flex-start; }
+}
+
+@media screen and (max-width: 720px) {
+  #home .narrow,
+  #intern .narrow,
+  #tasks .task-workspace,
+  #spaces .space-board { margin-top: 4px; margin-bottom: 28px; }
+  #home .home-page { gap: 14px; }
+  #home .home-page > section,
+  #home .home-page > .home-hero { padding: 20px; border-radius: 15px; }
+  #home .home-identity-row { align-items: flex-start; }
+  #home .home-identity h1 { font-size: 30px; }
+  #home .home-hero h2 { font-size: 21px; }
+  #home .home-intro { font-size: 12px; }
+  #home .home-insight-grid { grid-template-columns: 1fr; gap: 22px; margin-top: 20px; }
+  #home .home-insight-grid > div + div { padding: 20px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+  #home .home-focus-grid { grid-template-columns: 1fr; }
+  #home .home-recent-row { grid-template-columns: 43px minmax(0, 1fr); gap: 4px 9px; }
+  #home .home-recent-meta { grid-column: 2; display: flex; flex-wrap: wrap; justify-items: start; gap: 8px; }
+  #home .home-contact-list { grid-template-columns: 1fr; }
+  #home .home-section-head h2 { font-size: 16px; }
+  #tasks .task-page-head { align-items: center; gap: 10px; }
+  #tasks .task-page-tools .btn { padding: 7px 10px; font-size: 11px; }
+  #tasks .task-create { padding: 18px; border-radius: 8px; }
+  #tasks .task-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  #tasks .task-fields > label:last-child { grid-column: 1 / -1; }
+  #tasks .task-row { padding: 14px 0; gap: 10px; }
+  #tasks .task-attention .task-row { padding: 14px; }
+  #tasks .task-source-settings { padding: 13px 0 0; }
+  #tasks .task-source-checks { flex-direction: column; gap: 9px; }
+  #tasks .task-create-foot { align-items: flex-start; }
+  #tasks .task-create-foot > small { flex-basis: 100%; }
+  #tasks #personal-data-panel { padding-top: 18px; }
+  #intern .intern-summary-settings { padding: 19px; border-radius: 15px; }
+  #intern .intern-summary-head { gap: 12px; }
+  #intern .intern-summary-form { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  #intern .intern-summary-form .btn { grid-column: 1 / -1; }
+  #intern .intern-summary-meta { flex-direction: column; gap: 8px; padding: 13px; }
+  #intern .company { padding: 20px 19px 6px; border-radius: 15px; }
+  #intern .company-head { gap: 10px; }
+  #intern .company-id h3 { font-size: 15px; }
+  #intern .company-head .when { width: fit-content; margin-left: 60px; padding: 5px 8px; }
+  #intern .co-work li,
+  #intern .intern-review { grid-template-columns: 1fr; gap: 7px; padding: 17px 0; }
+  #spaces .ws { grid-template-columns: 1fr; gap: 14px; }
+  #spaces .space-overview-head { align-items: center; }
+  #spaces .space-entry { min-height: 0; padding: 20px; gap: 16px 10px; }
+  #spaces .space-entry-meta { display: grid; grid-template-columns: 1fr auto; }
+  #resume .resume-toolbar { gap: 7px; margin: 4px 0 15px; padding: 12px; border-radius: 12px; }
+  #resume .resume-toolbar .btn { min-height: 35px; padding: 7px 10px; font-size: 11px; }
+  #home-editor .home-editor-head,
+  #resume-import-dialog .resume-dialog-head { padding: 17px 18px; }
+  #task-draft-dialog { padding: 20px; }
+  #task-reminder-dialog form { padding: 22px; }
+}
+
+@media screen and (max-width: 420px) {
+  #home .home-page > section,
+  #home .home-page > .home-hero { padding: 17px; }
+  #home .home-identity-row { gap: 14px; }
+  #home .home-identity-row .btn { font-size: 11px; }
+  #home .home-outcome-list { gap: 7px; }
+  #home .home-outcome-row { padding: 8px; font-size: 11px; }
+  #home .home-range button { padding: 5px 9px; }
+  #tasks .task-fields { grid-template-columns: 1fr; }
+  #tasks .task-create { padding: 16px; }
+  #tasks .task-page-head h2 { font-size: 25px; }
+  #intern .intern-summary-head { flex-wrap: wrap; }
+  #intern .intern-summary-head > div { flex: 1 1 200px; }
+  #intern .intern-summary-form { grid-template-columns: 1fr; }
+  #spaces .space-entry { padding: 17px; }
+  #task-draft-dialog .task-actions { justify-content: stretch; }
+  #task-draft-dialog .task-actions .btn { flex: 1 1 auto; }
+}

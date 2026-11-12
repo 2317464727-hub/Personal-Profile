@@ -1,0 +1,177 @@
+/* Shared screen-only design system. Resume printing keeps its existing rules. */
+@media screen {
+  :root {
+    --ink:#202b40;
+    --on-ink:#ffffff;
+    --ink-hover:#30415d;
+    --text:#46536a;
+    --text-strong:#27364f;
+    --muted:#748097;
+    --faint:#8893a6;
+    --soft:#5f6d84;
+    --paper:#f4f6fb;
+    --card:#ffffff;
+    --surface:#ffffff;
+    --surface-2:#f7f9fd;
+    --surface-3:#eef2f9;
+    --surface-4:#fafbfe;
+    --line:#e2e7f0;
+    --hair:#edf0f6;
+    --wash:#edf1f8;
+    --sand:#f0f3f9;
+    --grid:#f0f3f8;
+    --grid-strong:#e4e9f2;
+    --accent:#4668ed;
+    --primary:#4668ed;
+    --accent-soft:#edf2ff;
+    --accent-line:#c4d1fd;
+    --accent-line-2:#d6dffc;
+    --accent-wash:rgba(70,104,237,.055);
+    --pick-bg:rgba(70,104,237,.10);
+    --today:#f4f7ff;
+    --hover:#f0f4ff;
+    --ok:#20846a;
+    --ok-bg:#edf9f3;
+    --ok-line:#c2e8d8;
+    --danger:#c44858;
+    --danger-soft:#f9dce1;
+    --rail:#c8d1df;
+    --teal:#249c94;
+    --amber:#ad7c2a;
+    --header:#ffffff;
+    --glass:rgba(255,255,255,.96);
+    --header-line:#e8ecf4;
+    --card-line:#e6ebf3;
+    --focus:rgba(70,104,237,.17);
+    --overlay:rgba(27,39,63,.64);
+    --scrim:rgba(27,39,63,.48);
+    --slot-wash:rgba(70,104,237,.025);
+    --slot-line:#bfccfa;
+    --body-glow:transparent;
+    --shadow:0 3px 18px rgba(33,52,87,.035);
+    --app-content-height:calc(100dvh - 40px);
+  }
+
+  html[data-theme="night"] {
+    --ink:#e8eefb;
+    --on-ink:#172133;
+    --ink-hover:#c8d5ed;
+    --text:#bdc8dd;
+    --text-strong:#e1e9f9;
+    --muted:#94a2bd;
+    --faint:#7d8ca8;
+    --soft:#a9b7ce;
+    --paper:#101723;
+    --card:#192234;
+    --surface:#192234;
+    --surface-2:#1d293d;
+    --surface-3:#253249;
+    --surface-4:#162032;
+    --line:#2b3850;
+    --hair:#243148;
+    --wash:#243149;
+    --sand:#202d43;
+    --grid:#223047;
+    --grid-strong:#31405b;
+    --accent:#91aaff;
+    --accent-soft:#25375e;
+    --accent-line:#425e95;
+    --accent-line-2:#344b77;
+    --accent-wash:rgba(145,170,255,.08);
+    --pick-bg:rgba(145,170,255,.15);
+    --today:#1f2e49;
+    --hover:#253555;
+    --ok:#82d8ba;
+    --ok-bg:#18382f;
+    --ok-line:#2c5d4e;
+    --danger:#f49ba9;
+    --danger-soft:#51303f;
+    --rail:#42516b;
+    --teal:#74d4cc;
+    --amber:#e7be76;
+    --header:#172133;
+    --glass:rgba(23,33,51,.97);
+    --header-line:#2b3850;
+    --card-line:#2b3850;
+    --focus:rgba(145,170,255,.23);
+    --overlay:rgba(0,7,20,.72);
+    --scrim:rgba(0,7,20,.66);
+    --slot-wash:rgba(145,170,255,.04);
+    --slot-line:#425e95;
+    --shadow:0 3px 18px rgba(0,0,0,.09);
+  }
+
+  body, html[data-theme="night"] body { background:var(--paper); }
+  body { font-family:"Segoe UI Variable","Inter","PingFang SC","Microsoft YaHei",sans-serif; }
+  button, a, input, select, textarea { -webkit-tap-highlight-color:transparent; }
+  button { transition:background-color .16s, border-color .16s, color .16s, box-shadow .16s; }
+  button:focus-visible, a:focus-visible, summary:focus-visible,
+  input:focus-visible, select:focus-visible, textarea:focus-visible,
+  [tabindex="0"]:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+  button:disabled { cursor:not-allowed; }
+  .btn { border-radius:10px; font-size:13px; padding:10px 16px; box-shadow:none; }
+  .btn:not(.ghost) { background:#4668ed; border-color:#4668ed; color:#fff; }
+  .btn:not(.ghost):hover:not(:disabled) { background:#3657d7; border-color:#3657d7; box-shadow:0 3px 9px rgba(70,104,237,.16); }
+  .btn.ghost { background:var(--surface); color:var(--text-strong); border-color:var(--line); }
+  .btn.ghost:hover:not(:disabled) { background:var(--surface-2); border-color:var(--accent-line); }
+  .text-btn { color:var(--soft); border-radius:8px; }
+  .text-btn:hover { color:var(--accent); background:var(--accent-soft); }
+  .kicker { font-size:10px; letter-spacing:.15em; font-weight:700; }
+  dialog { border:1px solid var(--line); border-radius:18px; box-shadow:0 24px 90px rgba(21,38,72,.22); }
+  dialog::backdrop { background:var(--scrim); backdrop-filter:blur(4px); }
+  .nav-icon { width:19px; height:19px; flex:none; fill:none; stroke:currentColor; stroke-width:1.65; stroke-linecap:round; stroke-linejoin:round; }
+  header.top .seal { width:38px; height:38px; flex:none; border-radius:12px; background:#4668ed; color:#fff; box-shadow:0 5px 12px rgba(70,104,237,.18); }
+  header.top .who strong { font-size:15px; font-weight:700; }
+  header.top .who small { font-size:10px; line-height:1.6; color:var(--muted); }
+  header.top nav { box-shadow:none; background:transparent; padding:0; gap:6px; border-radius:0; }
+  header.top nav button { display:flex; align-items:center; gap:12px; border-radius:10px; padding:11px 13px; font-size:13px; font-weight:500; color:var(--soft); white-space:nowrap; text-align:left; }
+  header.top nav button.active { background:var(--accent-soft); color:var(--accent); box-shadow:none; font-weight:650; }
+  header.top nav button:hover:not(.active) { background:var(--surface-2); color:var(--ink); }
+  .nav-caption { color:var(--faint); font-size:10px; letter-spacing:.11em; padding:0 13px 12px; }
+  header.top .theme-switch { padding:4px; background:var(--surface-3); border:1px solid var(--line); border-radius:10px; gap:4px; }
+  header.top .theme-switch button { border-radius:7px; justify-content:center; padding:9px 12px; flex:1; color:var(--soft); font-weight:500; }
+  header.top .theme-switch button.on { background:var(--surface); color:var(--ink); box-shadow:0 1px 4px rgba(25,43,78,.07); }
+  #personal-sync-status { background:var(--surface-2) !important; color:var(--soft); border-color:var(--line) !important; border-radius:9px !important; font-size:10px !important; line-height:1.6; box-shadow:none; }
+
+  @media (min-width:1181px) {
+    header.top { position:fixed; inset:0 auto 0 0; width:208px; height:100dvh; display:flex; flex-direction:column; align-items:stretch; justify-content:flex-start; flex-wrap:nowrap; padding:28px 16px 82px; gap:34px; background:var(--header); border:0; border-right:1px solid var(--line); box-shadow:none; backdrop-filter:none; }
+    header.top .mark { align-items:center; gap:9px; padding:0 4px; }
+    header.top .top-tools { flex:1; min-height:0; width:100%; margin:0; display:flex; flex-direction:column; align-items:stretch; gap:0; overflow-y:auto; }
+    header.top nav { display:flex; flex-direction:column; flex:none; width:100%; }
+    header.top nav button { width:100%; min-height:44px; }
+    header.top .theme-switch { margin-top:auto; flex-shrink:0; }
+    main, body.cal-view main { margin-left:208px; padding:20px 24px; min-width:0; }
+    #personal-sync-status { left:16px !important; bottom:22px !important; width:176px; max-width:176px !important; padding:9px 10px !important; }
+  }
+
+  @media (max-width:1180px) {
+    :root { --app-content-height:calc(100dvh - 146px); }
+    header.top { height:auto; min-height:110px; display:flex; flex-direction:column; align-items:stretch; justify-content:flex-start; gap:15px; padding:16px 20px 10px; background:var(--header); border-bottom:1px solid var(--line); }
+    header.top .mark { padding:0; }
+    header.top .top-tools { width:100%; margin:0; display:block; overflow:visible; padding:0; }
+    .nav-caption { display:none; }
+    header.top nav { display:flex; flex-direction:row; width:100%; min-width:0; max-width:100%; overflow-x:auto; scrollbar-width:none; gap:4px; padding:0 0 2px; }
+    header.top nav::-webkit-scrollbar { display:none; }
+    header.top nav button { flex:0 0 auto; gap:7px; padding:9px 13px; font-size:12px; }
+    header.top .theme-switch { position:absolute; right:20px; top:18px; margin:0; }
+    header.top .theme-switch button { padding:8px 11px; }
+    main, body.cal-view main { margin-left:0; padding:16px 18px 40px; }
+    #personal-sync-status { left:12px !important; bottom:8px !important; max-width:calc(100vw - 24px) !important; }
+  }
+
+  @media (max-width:600px) {
+    header.top { padding:13px 12px 8px; gap:12px; }
+    header.top .seal { width:32px; height:32px; border-radius:10px; }
+    header.top .who strong { font-size:14px; }
+    header.top .who small { font-size:9px; }
+    header.top nav button { padding:9px 11px; gap:6px; }
+    header.top .nav-icon { width:16px; height:16px; }
+    header.top .theme-switch { right:12px; top:14px; }
+    header.top .theme-switch button { font-size:10px; padding:7px 8px; }
+    main, body.cal-view main { padding:12px 10px 38px; }
+    .btn { padding:9px 12px; }
+  }
+  @media (prefers-reduced-motion:reduce) {
+    *, *::before, *::after { scroll-behavior:auto !important; transition:none !important; }
+  }
+}
